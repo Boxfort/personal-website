@@ -17,6 +17,14 @@ function doTimeout(text, i, interval, callback){
 	},i * interval);
 }
 
+function wait(time, callback){
+	setTimeout(function(){
+		if(callback !== undefined){
+			callback();
+		}
+	}, time);
+}
+
 function popFirst(array) {
 	//Remove first item from array and return it.
 	if(array !== undefined){
@@ -31,11 +39,12 @@ function popFirst(array) {
 //The queue is the sequence of timed events that take place, in order.
 var queue = [
 	function(callback){
-		console.log("i ran!");
+		wait(2000, callback);
+	},
+	function(callback){
 		typeText("First line!", 75, callback);
 	},
 	function(callback){
-		console.log("me too !");
 		typeText("Second line!", 75, callback);
 	}
 ];
