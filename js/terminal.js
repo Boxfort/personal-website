@@ -1,3 +1,12 @@
+var asciiArt = [
+"     _            _         _              _                           </br>",
+"    | | __ _  ___| | __    / \   _ __   __| | ___ _ __ ___  ___  _ __  </br>",
+" _  | |/ _` |/ __| |/ /   / _ \ | '_ \ / _` |/ _ \ '__/ __|/ _ \| '_ \ </br>",
+"  |_| | (_| | (__|   <   / ___ \| | | | (_| |  __/ |  \__ \ (_) | | | |</br>",
+" \___/ \__,_|\___|_|\_\ /_/   \_\_| |_|\__,_|\___|_|  |___/\___/|_| |_|</br>",
+"                                                                       </br>"
+];
+
 function typeText(text, interval, callback){
 	for (var i = 0; i < text.length; i++) {
 		if(i == text.length - 1){
@@ -36,6 +45,8 @@ function popFirst(array) {
 	return null;
 }
 
+var hostname = "45.55.248.198";
+
 //The queue is the sequence of timed events that take place, in order.
 var queue = [
 	function(callback){
@@ -45,7 +56,35 @@ var queue = [
 		typeText("First line!", 75, callback);
 	},
 	function(callback){
-		typeText("Second line!", 75, callback);
+		$("#terminal-cursor").before("</br>");
+		$("#terminal-cursor").before("<span style='color:green'>root@192.168.0.1:~$ </span>");
+		wait(1200, callback);
+	},
+	function(callback){
+		typeText("ssh root@"+hostname, 75, callback);
+	},
+	function(callback){
+		$("#terminal-cursor").before("</br>");
+		$("#terminal-cursor").before("The authenticity of host "+hostname+" can't be established. ECDSA key fingerprint is bd:e5:e1:47:97:11:44:39:6a:2d:6e:15:ab:ca. </br>Are you sure you want to continue connecting (yes/no)? ");
+		wait(3500, callback);
+	},
+	function(callback){
+		typeText("yes", 100, callback);
+	},
+	function(callback){
+		wait(500, callback);
+	},
+	function(callback){
+		$("#terminal-cursor").before("</br>");
+		$("#terminal-cursor").before("Warning: Permanently added '"+hostname+ "' (ECDSA) to the list of known hosts.");
+		$("#terminal-cursor").before("</br>");
+		$("#terminal-cursor").before(hostname+"'s password: ");
+		wait(6000, callback);
+	},
+	function(callback){
+		$("#terminal-cursor").before("</br>");
+		$("#terminal-cursor").before("<span style='color:green'>root@"+hostname+":/# </span>");
+
 	}
 ];
 
@@ -65,6 +104,5 @@ function runQueue(array){
 $( document ).ready(function(){
 	//Opening Sequence
 	$("#terminal-cursor").before("<span style='color:green'>root@192.168.0.1:~$ </span>");
-	console.log(queue);
 	runQueue(queue);
 });

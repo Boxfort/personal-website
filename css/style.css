@@ -4,11 +4,26 @@ body{
 
 #terminal{
 	color:#FFFFFF;
+	font-family: 'Oxygen Mono', monospace;
+	padding: 10px;
+	text-indent: 0em;
+	line-height: 100%;
+	font-size: 1em;
+}
+
+p{
+	display: inline-block;
+}
+
+span{
+	margin: 0px;
+	text-indent: 0%;
 }
 
 #terminal-cursor {
   font-weight: 100;
   font-size: 20px;
+  margin-top: 0;
   color: #FFFFFF;
   -webkit-animation: 1s blink step-end infinite;
   -moz-animation: 1s blink step-end infinite;
