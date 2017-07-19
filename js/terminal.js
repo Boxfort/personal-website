@@ -1,5 +1,10 @@
-
-var asciiArt = "<div class='ascii'>__        __   _                          </br>\ \      / /__| | ___ ___  _ __ ___   ___ </br> \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \</br>  \ V  V /  __/ | (_| (_) | | | | | |  __/</br>   \_/\_/ \___|_|\___\___/|_| |_| |_|\___|</br></div>";
+var asciiArt = [" __        __   _                          </br>",
+             " \\ \\      / /__| | ___ ___  _ __ ___   ___ </br>",
+             "  \\ \\ /\\ / / _ \\ |/ __/ _ \\| '_ ` _ \\ / _ \\ </br>",
+             "   \\ V  V /  __/ | (_| (_) | | | | | |  __/</br>",
+             "    \\_/\\_/ \\___|_|\\___\\___/|_| |_| |_|\\___|</br>",
+             "                                           </br>"
+];
 
 var loadingBar = [
 "[                     ] 0%",
@@ -79,7 +84,6 @@ var queue = [
 		wait(2000, callback);
 	},
 	function(callback){
-		$("#terminal-cursor").before("</br>");
 		$("#terminal-cursor").before("<span style='color:green'>root@192.168.0.1:~$ </span>");
 		wait(1200, callback);
 	},
@@ -128,6 +132,10 @@ var queue = [
 		wait(460, callback);
 	},
 	function(callback){
+		$("#terminal-cursor").before("<div id='ascii'></div>")
+		for(var i = 0; i < asciiArt.length; i++){
+			$("#ascii").append(asciiArt[i]);
+		}
 		printLoadBar(loadingBar, 500, callback);
 	},
 	function(callback){
@@ -159,7 +167,5 @@ function runQueue(array){
 }
 
 $( document ).ready(function(){
-	//Opening Sequence
-	$("#terminal-cursor").before("<span style='color:green'>root@192.168.0.1:~$ </span>");
 	runQueue(queue);
 });

@@ -1,17 +1,35 @@
 body{
-	background:#111111;
+	background:#151515;
 }
 
 #terminal{
 	color:#FFFFFF;
-	font-family: 'Oxygen Mono', monospace;
+	font-family: 'VT323', monospace;
 	padding: 10px;
 	text-indent: 0em;
 	line-height: 100%;
 	font-size: 1em;
-	width: 100%;
+	width: 50%;
 	height: 500px;
-	background:#111111;
+	background:#121212;
+	margin:auto;
+	border-radius: 0px;
+	box-shadow: 5px 5px 10px #111111;
+	border: 2px solid #141e2d;
+}
+
+#terminal-header{
+	font-family: 'VT323', monospace;
+	color:#FFFFFF;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px 10px;
+	width: 50%;
+	height: 1em;
+	background: #141e2d;
+	border: 2px solid #141e2d;
+	box-shadow: 5px 8px 10px #111111;
 }
 
 p{
