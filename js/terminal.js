@@ -150,6 +150,7 @@ var queue = [
 	},
 	function(){
 		//Load the actual website
+		window.location.href = "next.html";
 	}	
 ];
 

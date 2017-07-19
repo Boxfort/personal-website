@@ -1,0 +1,48 @@
+.full-header{
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-color: #333;
+	background-attachment: fixed;
+	color: #FFFFFF;
+}
+
+.site-text{
+	position: absolute;
+	width: 100%;
+	bottom: 30px;
+	left: 0;
+}
+
+.text-wrapper{
+	text-align: left;
+	display:inline-block;
+	float:left;
+}
+
+.site-title{
+	font-size: 3em;
+	font-weight: bold;
+}
+
+.site-description{
+	font-size: 2em;
+}
+
+#down-link{
+	display: inline-block;
+	font-size: 5em;
+	height: 100%;
+	margin: auto;
+	color: #FFFFFF;
+	float:right;
+}
+
+.site-text-wrapper{
+	margin:auto;
+	width: 700px;
+}
+
+.content{
+	height: 1000px;
+}
