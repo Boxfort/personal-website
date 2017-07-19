@@ -81,11 +81,8 @@ var hostname = "45.55.248.198";
 //The queue is the sequence of timed events that take place, in order.
 var queue = [
 	function(callback){
-		wait(2000, callback);
-	},
-	function(callback){
-		$("#terminal-cursor").before("<span style='color:green'>root@192.168.0.1:~$ </span>");
-		wait(1200, callback);
+		$("#terminal-cursor").before("<span class='color-text'>root@192.168.0.1:~$ </span>");
+		wait(2500, callback);
 	},
 	function(callback){
 		typeText("ssh root@"+hostname, 75, callback);
@@ -110,7 +107,7 @@ var queue = [
 	},
 	function(callback){
 		$("#terminal-cursor").before("</br>");
-		$("#terminal-cursor").before("<span style='color:green'>root@"+hostname+":/# </span>");
+		$("#terminal-cursor").before("<span class='color-text'>root@"+hostname+":/# </span>");
 		wait(1200, callback);
 	},
 	function(callback){
@@ -121,7 +118,7 @@ var queue = [
 	},
 	function(callback){
 		$("#terminal-cursor").before("</br>");
-		$("#terminal-cursor").before("<span style='color:green'>root@"+hostname+":~/Public/Website# </span>");
+		$("#terminal-cursor").before("<span class='color-text'>root@"+hostname+":~/Public/Website# </span>");
 		wait(400, callback);
 	},
 	function(callback){
@@ -143,6 +140,9 @@ var queue = [
 	},
 	function(callback){
 		$("#terminal-cursor").before("Launching");
+		wait(750, callback);
+	},
+	function(callback){
 		typeText("...", 750, callback);
 	},
 	function(callback){
