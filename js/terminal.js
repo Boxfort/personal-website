@@ -1,20 +1,46 @@
-var asciiArt = [
-"     _            _         _              _                           </br>",
-"    | | __ _  ___| | __    / \   _ __   __| | ___ _ __ ___  ___  _ __  </br>",
-" _  | |/ _` |/ __| |/ /   / _ \ | '_ \ / _` |/ _ \ '__/ __|/ _ \| '_ \ </br>",
-"  |_| | (_| | (__|   <   / ___ \| | | | (_| |  __/ |  \__ \ (_) | | | |</br>",
-" \___/ \__,_|\___|_|\_\ /_/   \_\_| |_|\__,_|\___|_|  |___/\___/|_| |_|</br>",
-"                                                                       </br>"
-];
+
+var asciiArt = "<div class='ascii'>__        __   _                          </br>\ \      / /__| | ___ ___  _ __ ___   ___ </br> \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \</br>  \ V  V /  __/ | (_| (_) | | | | | |  __/</br>   \_/\_/ \___|_|\___\___/|_| |_| |_|\___|</br></div>";
+
+var loadingBar = [
+"[                     ] 0%",
+"[##                   ] 11%",
+"[####                 ] 19%",
+"[######               ] 32%",
+"[###########          ] 57%",
+"[##############       ] 84%",
+"[#################### ] 99%",
+"[#####################] 100%"
+]
+
 
 function typeText(text, interval, callback){
 	for (var i = 0; i < text.length; i++) {
 		if(i == text.length - 1){
 			doTimeout(text[i], i, interval, callback);
 		}else{
-			doTimeout(text[i], i, interval)
+			doTimeout(text[i], i, interval);
 		}
 	}
+}
+
+function printLoadBar(array, interval, callback){
+	$("#terminal-cursor").before("Initializing: <div id='loadbar'></div>")
+	for (var i = 0; i < array.length; i++){
+		if(i == array.length - 1){
+			doTimeoutLoadBar(array[i], i, interval, callback);
+		}else{
+			doTimeoutLoadBar(array[i], i, interval);
+		}
+	}
+}
+
+function doTimeoutLoadBar(text, i, interval, callback){
+	setTimeout(function(){
+		$("#loadbar").html(text);
+		if(callback !== undefined){
+			callback();
+		}
+	},i * interval);
 }
 
 function doTimeout(text, i, interval, callback){
@@ -53,9 +79,6 @@ var queue = [
 		wait(2000, callback);
 	},
 	function(callback){
-		typeText("First line!", 75, callback);
-	},
-	function(callback){
 		$("#terminal-cursor").before("</br>");
 		$("#terminal-cursor").before("<span style='color:green'>root@192.168.0.1:~$ </span>");
 		wait(1200, callback);
@@ -84,8 +107,42 @@ var queue = [
 	function(callback){
 		$("#terminal-cursor").before("</br>");
 		$("#terminal-cursor").before("<span style='color:green'>root@"+hostname+":/# </span>");
-
-	}
+		wait(1200, callback);
+	},
+	function(callback){
+		typeText("cd ~/Public/Website", 80, callback);
+	},
+	function(callback){
+		wait(650, callback);
+	},
+	function(callback){
+		$("#terminal-cursor").before("</br>");
+		$("#terminal-cursor").before("<span style='color:green'>root@"+hostname+":~/Public/Website# </span>");
+		wait(400, callback);
+	},
+	function(callback){
+		typeText("./init.sh", 70, callback);	
+	},
+	function(callback){
+		$("#terminal-cursor").before("</br>");
+		wait(460, callback);
+	},
+	function(callback){
+		printLoadBar(loadingBar, 500, callback);
+	},
+	function(callback){
+		wait(200, callback);
+	},
+	function(callback){
+		$("#terminal-cursor").before("Launching");
+		typeText("...", 750, callback);
+	},
+	function(callback){
+		wait(1000, callback);
+	},
+	function(){
+		//Load the actual website
+	}	
 ];
 
 function runQueue(array){

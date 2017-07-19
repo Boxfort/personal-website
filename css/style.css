@@ -9,15 +9,26 @@ body{
 	text-indent: 0em;
 	line-height: 100%;
 	font-size: 1em;
+	width: 100%;
+	height: 500px;
+	background:#111111;
 }
 
 p{
 	display: inline-block;
 }
 
+#loadbar{
+	white-space: pre;
+}
+
 span{
 	margin: 0px;
 	text-indent: 0%;
+}
+
+#ascii{
+	white-space: pre;
 }
 
 #terminal-cursor {
