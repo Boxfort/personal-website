@@ -1,0 +1,172 @@
+.full-header{
+	display: table;
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-color: #05000c;
+	background-attachment: fixed;
+	color: #FFFFFF;
+	font-family: "Oxygen Mono", monospace;
+}
+
+.site-text{
+	position: relative;
+	width: 100%;
+	margin-top: 50%;
+	display:table-cell;
+	vertical-align: middle;
+}
+
+.text-wrapper{
+	text-align: left;
+	display:inline-block;
+	float:left;
+}
+
+.site-title{
+	font-size: 3em;
+	font-weight: bold;
+}
+
+.site-description{
+	font-size: 2em;
+	display: inline-block;
+}
+
+#down-link{
+	display: inline-block;
+	cursor: pointer;
+	font-size: 3em;
+	height: 100%;
+	margin: auto;
+	margin-top: 50px;
+	color: #FFFFFF;
+	float:right;
+}
+
+.site-text-wrapper{
+	margin:auto;
+	max-width: 700px;
+}
+
+.content{
+	height: 1000px;
+	font-family: "Libre Franklin", sans-serif;
+}
+
+.main-text{
+	margin-top: 35px;
+}
+
+.links{
+	margin-top: 20px;
+}
+
+.page-title{
+	margin-top: 30px;
+}
+
+a{
+	text-decoration: none;
+	cursor: pointer;
+}
+
+ul{
+	list-style-type: none;
+	padding:0;
+}
+
+li{
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
+.page-header{
+	font-weight: bold;
+}
+
+.page-footer{
+	height: 100px;
+	font-family: "Libre Franklin", sans-serif;
+	border-top: 1px solid #ccc;
+	margin-bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.footer-left{
+	float:left;
+	display:inline-block;
+	margin-left: 20px;
+	margin-top: 35px;
+}
+
+.footer-right{
+	display:inline-block;
+	float:right;
+	text-decoration:none;
+	margin-right: 20px;
+	margin-top: 35px;
+	white-space: pre;
+}
+
+
+.terminal-cursor {
+	display:inline-block;
+  font-weight: 100;
+  font-size: 30px;
+  color: #2E3D48;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+}
