@@ -95,6 +95,7 @@ li{
 	margin-bottom: 0;
 	width: 100%;
 	text-align: center;
+	padding: 40px;
 }
 
 .footer-left{
@@ -113,11 +114,26 @@ li{
 	white-space: pre;
 }
 
+.small-header {
+	background-color:#05000C;
+	width: 100%;
+	height: 125px;
+	margin-top: 0;
+	color: #FFFFFF;
+	font-family: "Oxygen Mono", monospace;
+	padding-top: 35px;
+	font-size:3em !important;
+}
+
+.small-header-text {
+	width: 400px; 
+	margin-left: 10%;
+	font-weight: bold;
+}
 
 .terminal-cursor {
 	display:inline-block;
   font-weight: 100;
-  font-size: 30px;
   color: #2E3D48;
   -webkit-animation: 1s blink step-end infinite;
   -moz-animation: 1s blink step-end infinite;
