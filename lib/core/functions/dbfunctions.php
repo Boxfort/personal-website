@@ -11,7 +11,7 @@ function get_projects()
 	if($isOkay)
 	{
 		//Returns an array index by column name.
-		$data = $stmt->fetch(PDO::FETCH_ASSOC);
+		$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $data;
 	}
 
