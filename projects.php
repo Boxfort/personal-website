@@ -1,7 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<?php include 'lib/module/head.php' ?>
+		<?php 
+			include 'lib/module/head.php';
+			include 'lib/core/dbconnection.php';
+			include 'lib/core/functions/dbfunctions.php';
+		?>
 		<title>Jack Anderson - Projects</title>
 	</head>
 	<body>
@@ -11,14 +15,21 @@
 				<div class="row">
 					<div class="col-sm-3 col-xs-12"><h3 class="page-title">PROJECTS.</h3></div>
 					<div class="col-sm-7 col-xs-12">
-						<div class="row">
-							<div class="col-sm-6 col-xs-12">Project goes here.</div>
-							<div class="col-sm-6 col-xs-12">Project goes here.</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6 col-xs-12">Project goes here.</div>
-							<div class="col-sm-6 col-xs-12">Project goes here.</div>
-						</div>
+						<?php
+							$projects = get_projects();
+							$count = 0;
+							$close = false;
+
+							foreach (array_chunk($projects, 2) as $projectChunk)
+							{
+								echo "<div class='row'";
+								foreach ($projectChunk as $project)
+								{
+									echo "<div class='col-sm-6 col-xs-12'>{$project[project_name]}</div>";
+								}
+								echo "</div>";
+							}
+						?>
 					</div>
 					<div class="col-sm-2 col-xs-12 links">
 						<?php include 'lib/module/nav.php' ?>
