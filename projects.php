@@ -14,7 +14,7 @@
 			<div class="content">
 				<div class="row">
 					<div class="col-sm-3 col-xs-12"><h3 class="page-title">PROJECTS.</h3></div>
-					<div class="col-sm-7 col-xs-12">
+					<div class="col-sm-7 col-xs-12 main-text">
 						<?php
 							$projects = get_projects();
 							$count = 0;
@@ -22,10 +22,16 @@
 
 							foreach (array_chunk($projects, 2) as $projectChunk)
 							{
-								echo "<div class='row'";
+								echo "<div class='row'>";
 								foreach ($projectChunk as $project)
 								{
-									echo "<div class='col-sm-6 col-xs-12'>{$project[project_name]}</div>";
+									$image = get_project_image($project['project_id']);
+									//<div class='project-thumb' style='background-image:url(img/{$image['img_path']});'>a</div>
+									echo "
+									<div class='col-sm-6 col-xs-12'>
+										<img class='project-thumb' src='img/{$image['img_path']}' alt='img'>
+										<div class='project-title'>{$project['project_name']}</div>
+									</div>";
 								}
 								echo "</div>";
 							}
@@ -37,5 +43,6 @@
 				</div>
 			</div>
 		</div>
+		<?php include 'lib/module/footer.php' ?>
 	</body>
 </html>
