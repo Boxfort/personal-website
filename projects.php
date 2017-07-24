@@ -13,8 +13,8 @@
 		<div class="container">
 			<div class="content">
 				<div class="row">
-					<div class="col-sm-3 col-xs-12"><h3 class="page-title">PROJECTS.</h3></div>
-					<div class="col-sm-7 col-xs-12 main-text">
+					<div class="col-sm-2 col-xs-12"><h3 class="page-title">PROJECTS.</h3></div>
+					<div class="col-sm-8 col-xs-12 main-text">
 						<?php
 							$projects = get_projects();
 							$count = 0;
@@ -26,11 +26,14 @@
 								foreach ($projectChunk as $project)
 								{
 									$image = get_project_image($project['project_id']);
-									//<div class='project-thumb' style='background-image:url(img/{$image['img_path']});'>a</div>
 									echo "
 									<div class='col-sm-6 col-xs-12'>
-										<img class='project-thumb' src='img/{$image['img_path']}' alt='img'>
-										<div class='project-title'>{$project['project_name']}</div>
+										<a href='project.php?id={$project['project_id']}'>
+										<div class='project-wrapper'>
+											<img class='project-thumb' src='img/{$image['img_path']}' alt='img'>
+											<div class='project-title'>{$project['project_name']}</div>
+										</div>
+										</a>
 									</div>";
 								}
 								echo "</div>";

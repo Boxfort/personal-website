@@ -65,9 +65,15 @@
 	margin-top: 30px;
 }
 
-a{
-	text-decoration: none;
+a:link, a:visited, a:hover{
+	text-decoration: inherit;
+	color:inherit;
 	cursor: pointer;
+}
+
+a:hover{
+	color: #ccc;
+	text-decoration: inherit;
 }
 
 ul{
@@ -92,6 +98,7 @@ li{
 	font-family: "Libre Franklin", sans-serif;
 	border-top: 1px solid #ccc;
 	margin-bottom: 0;
+	margin-top: 20px;
 	width: 100%;
 	text-align: center;
 	padding: 40px;
@@ -136,13 +143,19 @@ li{
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	background-color: #000;
-	margin: 5px 5px;
 }
 
 .project-title {
 	text-align:center;
 	font-weight: bold;
 	font-size: 1em;
+	margin: 10px 0px 10px 0px;
+}
+
+.project-wrapper {
+	border: 1px solid #ccc;
+	padding: 4px;
+	margin-bottom: 15px;
 }
 
 .terminal-cursor {

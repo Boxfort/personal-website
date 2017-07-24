@@ -2,6 +2,7 @@
 		<link rel="stylesheet" type="text/css" href="lib/css/main.css">
 		<link href="https://fonts.googleapis.com/css?family=Oxygen+Mono" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="lib/js/scroll.js"></script>
 		<!-- Latest compiled and minified CSS -->

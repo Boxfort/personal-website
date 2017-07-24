@@ -54,4 +54,22 @@ function get_project_image($id)
 	return false;
 }
 
+function get_project_images($id)
+{
+	$db = new DbConnection();
+	$data = array();
+	$stmt = $db->prepare("SELECT * FROM project_image WHERE image_id = :id");
+
+	$stmt->bindParam(":id", $id, PDO::PARAM_INT);
+
+	$isOkay = $stmt->execute();
+	if($isOkay)
+	{
+		$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $data;
+	}
+
+	return false;
+}
+
 ?>

@@ -1,14 +1,13 @@
 <h4>Pages</h4>
 <ul>
-	<li><a>About me</a></li>
-	<li><a>Projects</a></li>
-	<li><a>Contact</a></li>
+	<a href='next.php'><li>About me</li></a>
+	<a href='projects.php'><li>Projects</li></a>
+	<a href='#'><li>Contact</li></a>
 </ul>
 
 <h4>Links</h4>
 <ul>
-	<li>github</li>
-	<li>linkedin</li>
-	<li>something</li>
+	<a href="https://www.github.com/boxfort"><li>Github</li></a>
+	<a href="https://www.linkedin.com"><li>Linkedin</li</a>
 </li>
 
