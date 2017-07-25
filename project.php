@@ -21,15 +21,18 @@
 				<div class="col-sm-2 col-xs-12"><h3 class='page-title'><?php echo "{$project['project_name']}" ?></h3></div>
 				<div class="col-sm-8 col-xs-12 main-text">
 					<?php include 'lib/module/projectcarousel.php' ?>
-					<?php echo "{$project['project_description']}" ?>
+					<?php echo "<div class='project-text'>{$project['project_description']}</div>" ?>
 				</div>
-				<div class="col-sm-2 col-xs-12">
+				<div class="col-sm-2 col-xs-12 ">
 					<h3> Technologies Used </h3>
 					<ul>
-						<li><i class="devicon-javascript-plain colored"></i> Javascript</li>
-						<li><i class="devicon-php-plain colored"></i> PHP</li>
-						<li><i class="devicon-html5-plain colored"></i> HTML</li>
-						<li><i class="devicon-css3-plain colored"></i> CSS</li>
+						<?php 
+							$techs = get_project_tech($project['project_id']); 
+							foreach($techs as $tech)
+							{
+								echo "<li>{$tech['tech_html']}</li>";
+							}
+						?>
 					</ul>
 					<h3> Links </h3>
 					<ul>
