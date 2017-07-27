@@ -1,0 +1,8 @@
+Options +FollowSymLinks
+RewriteEngine On
+Rewritecond %{REQUEST_FILENAME} !-f
+Rewritecond %{REQUEST_FILENAME} !-d
+RewriteRule ^about/?$ next.php
+RewriteRule ^contact/?$ contact.php
+RewriteRule ^projects/?$ projects.php
+RewriteRule ^projects/(.+)$ project.php?id=$1 [L]

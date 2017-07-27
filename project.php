@@ -9,7 +9,7 @@
 		$project = get_project($_GET['id']);
 		if($project == false || empty($project))
 		{
-			header( 'Location: /projects.php' );
+			header( 'Location: /projects' );
 		}
 
 		$title = strtoupper($project['project_name']);

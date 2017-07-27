@@ -26,7 +26,7 @@
 								echo "
 									<a href='project.php?id={$projects[$i]['project_id']}'>
 									<div class='project-wrapper'>
-										<img class='project-thumb' src='img/{$image['img_path']}' alt='img'>
+										<img class='project-thumb' src='/img/{$image['img_path']}' alt='img'>
 										<div class='project-title'>{$projects[$i]['project_name']}</div>
 									</div>
 									</a>
@@ -41,7 +41,7 @@
 								echo "
 									<a href='project.php?id={$projects[$i]['project_id']}'>
 									<div class='project-wrapper'>
-										<img class='project-thumb' src='img/{$image['img_path']}' alt='img'>
+										<img class='project-thumb' src='/img/{$image['img_path']}' alt='img'>
 										<div class='project-title'>{$projects[$i]['project_name']}</div>
 									</div>
 									</a>
