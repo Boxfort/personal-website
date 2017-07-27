@@ -17,27 +17,38 @@
 					<div class="col-sm-8 col-xs-12 main-text">
 						<?php
 							$projects = get_projects();
-							$count = 0;
-							$close = false;
+							$middle = ceil(count($projects) / 2);
 
-							foreach (array_chunk($projects, 2) as $projectChunk)
+							echo "<div class='col-sm-6 col-xs-12'>";
+							for($i = 0; $i < $middle; $i++)
 							{
-								echo "<div class='row'>";
-								foreach ($projectChunk as $project)
-								{
-									$image = get_project_image($project['project_id']);
-									echo "
-									<div class='col-sm-6 col-xs-12'>
-										<a href='project.php?id={$project['project_id']}'>
-										<div class='project-wrapper'>
-											<img class='project-thumb' src='img/{$image['img_path']}' alt='img'>
-											<div class='project-title'>{$project['project_name']}</div>
-										</div>
-										</a>
-									</div>";
-								}
-								echo "</div>";
+								$image = get_project_image($projects[$i]['project_id']);
+								echo "
+									<a href='project.php?id={$projects[$i]['project_id']}'>
+									<div class='project-wrapper'>
+										<img class='project-thumb' src='img/{$image['img_path']}' alt='img'>
+										<div class='project-title'>{$projects[$i]['project_name']}</div>
+									</div>
+									</a>
+								";
 							}
+							echo "</div>";
+
+							echo "<div class='col-sm-6 col-xs-12'>";
+							for($i = $middle; $i < count($projects); $i++)
+							{
+								$image = get_project_image($projects[$i]['project_id']);
+								echo "
+									<a href='project.php?id={$projects[$i]['project_id']}'>
+									<div class='project-wrapper'>
+										<img class='project-thumb' src='img/{$image['img_path']}' alt='img'>
+										<div class='project-title'>{$projects[$i]['project_name']}</div>
+									</div>
+									</a>
+								";
+							}
+							echo "</div>";
+
 						?>
 					</div>
 					<div class="col-sm-2 col-xs-12 links">

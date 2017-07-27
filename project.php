@@ -11,6 +11,8 @@
 		{
 			header( 'Location: /projects.php' );
 		}
+
+		$title = strtoupper($project['project_name']);
 	?>
 </head>
 <body>
@@ -18,7 +20,7 @@
 	<div class="container">
 		<div class="content">
 			<div class="row">
-				<div class="col-sm-2 col-xs-12"><h3 class='page-title'><?php echo "{$project['project_name']}" ?></h3></div>
+				<div class="col-sm-2 col-xs-12"><h3 class='page-title'><?php echo "{$title}." ?></h3></div>
 				<div class="col-sm-8 col-xs-12 main-text">
 					<?php include 'lib/module/projectcarousel.php' ?>
 					<?php echo "<div class='project-text'>{$project['project_description']}</div>" ?>
