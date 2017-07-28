@@ -146,6 +146,7 @@ li{
 	background-size: auto 100%;
 	background-repeat: no-repeat;
 	background-color: #000;
+	margin: auto;
 }
 
 .project-title {
@@ -165,9 +166,26 @@ li{
 	margin-top: 20px;
 }
 
+.about-text{
+	font-size: 1.2em;
+	text-indent: 60px;
+	text-align: justify;
+}
+
 .custom-icon{
 	width: 1em;
 	height: 1em;
+}
+
+.my-picture{
+	margin: auto;
+	width: 300px;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.footer-text{
+	float:right;
 }
 
 .carousel-inner{

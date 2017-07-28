@@ -1,8 +1,8 @@
 <h4>Pages</h4>
 <ul>
-	<a href='next.php'><li>About me</li></a>
-	<a href='projects.php'><li>Projects</li></a>
-	<a href='#'><li>Contact</li></a>
+	<a href='about'><li>About me</li></a>
+	<a href='projects'><li>Projects</li></a>
+	<a href='contact'><li>Contact</li></a>
 </ul>
 
 <h4>Links</h4>

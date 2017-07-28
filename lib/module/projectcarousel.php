@@ -15,14 +15,14 @@
 <!-- Wrapper for slides -->
 <div class="carousel-inner">
 	<div class="item active">
-		<img src="img/<?php echo $images[0]['img_path'] ?>" alt="Image">
+		<img src="/img/<?php echo $images[0]['img_path'] ?>" alt="Image">
 	</div>
 	<?php
 		for($i = 1; $i < count($images); $i++)
 		{
 			echo "
 				<div class='item'>
-					<img src='img/{$images[$i]['img_path']}' alt='image'>
+					<img src='/img/{$images[$i]['img_path']}' alt='image'>
 				</div>
 			";
 		}
